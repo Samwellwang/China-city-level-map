@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- 禁止缩放-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body style="height: fit-content;width: auto;">
+  <div id="app">
+    <!-- <el-button @click="visible = true">Button</el-button>
+    <el-dialog :visible.sync="visible" title="Hello world">
+      <p>Try Element</p>
+    </el-dialog> -->
+    <div id= "back"></div>
+    <div id="input">
+        <el-input v-model="input" placeholder="搜索您想要的商品"></el-input>
+        <template>
+            <el-carousel :interval="5000">
+              <el-carousel-item v-for="item in items" :key="item">
+                  <img :src="item.item" alt="" width="100%" height="100%">
+              </el-carousel-item>
+            </el-carousel>
+          </template>
+          <div id= "icon">
+            <div v-for = "item in icons" :key = "item">
+                <img :src="item.icon" alt="" width="100%" height="100%">
+                <div>{{item.name}}</div>
+            </div>
+         </div>
+        <div id = "product">
+            <div v-for = "item in products" :key = "item">
+                <div>
+                    <img :src="item.thumbnail" alt="" width="167px" height="173px">
+                    <div class="label" v-for = "item2 in item.tags" :key ="item2"> 
+                        <div>{{item2}}</div>
+                    </div>
+                    <div class="price">
+                        <div class="priceCurrent">{{item.priceCurrent}}</div>
+                        <div>出价{{item.bidTimes}}次</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+</body>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { 
+            visible: false,
+            items:[{item:"https://yaqu-common.oss-cn-beijing.aliyuncs.com/assets/banner/%E5%AE%9A%E7%A8%BFbanner1%403x.png"},{item:"https://yaqu-common.oss-cn-beijing.aliyuncs.com/assets/banner/%E5%AE%9A%E7%A8%BFbanner1%403x%20%283%29.png"},{item:"https://yaqu-common.oss-cn-beijing.aliyuncs.com/assets/banner/activity.png"}],
+            icons:[{icon:"https://yaqu-common.oss-cn-beijing.aliyuncs.com/assets/homePageClassification/%E5%95%86%E5%9F%8E.png",name:"商城"},{icon:"https://yaqu-common.oss-cn-beijing.aliyuncs.com/assets/homePageClassification/%E4%BC%98%E5%BA%97.png",name:"优店"},{icon:"https://yaqu-common.oss-cn-beijing.aliyuncs.com/assets/homePageClassification/%E9%89%B4%E5%AE%9A.png",name:"鉴定"},{icon:"https://yaqu-common.oss-cn-beijing.aliyuncs.com/assets/homePageClassification/%E6%8B%8D%E5%8D%96.png",name:"拍卖"}],
+            products:[
+            {
+                "pid": "YQ_PM_LLF82N58",
+                "name": "胡鱼鱼预估鱼鱼鱼鱼鱼鱼",
+                "title": "胡鱼鱼预估鱼鱼鱼鱼鱼鱼",
+                "thumbnail": "https://yaqu-product-image.oss-cn-beijing.aliyuncs.com/16-2021-08-30-15-50-36-605.jpg?x-oss-process=style/product_image_thumbnail",
+                "thumbnailW": 1920,
+                "thumbnailH": 1080,
+                "size": null,
+                "bidTimes": 121,
+                "priceStart": null,
+                "priceOnce": null,
+                "priceCurrent": "12100.00",
+                "postFee": 1,
+                "deposit": 0,
+                "keepPrice": 0,
+                "productCategoryName": "文玩杂项摆件",
+                "categoryFirst": "文玩杂项",
+                "categorySecond": "摆件",
+                "categoryFirstId": 3,
+                "categorySecondId": 24,
+                "createTime": 1631846398000,
+                "updateTime": 1631864229000,
+                "commend": 0,
+                "attention": 0,
+                "conserve": 0,
+                "ageId": 335,
+                "age": "当代",
+                "material": "玻璃",
+                "materialId": 338,
+                "service": null,
+                "startTime": 1631846340000,
+                "startTimeSecond": 1631846340,
+                "endTime": 1632063600000,
+                "endTimeSecond": 1632063600,
+                "status": 1,
+                "publishStatus": 1,
+                "soldoutReason": null,
+                "belongFrom": 99,
+                "belongAge": 1,
+                "isHelpSell": 0,
+                "tags": [
+                    "当代",
+                    "优店"
+                ],
+                "description": "",
+                "canDown": false,
+                "type": 1,
+                "retailPrice": null,
+                "oid": null,
+                "spec": null,
+                "mine": false
+            },
+            {
+                "pid": "YQ_PM_MKEND356",
+                "name": "地灵灵挺牛红顶2",
+                "title": "地灵灵挺牛红顶2",
+                "thumbnail": "https://yaqu-product-image.oss-cn-beijing.aliyuncs.com/381-2021-08-23-17-17-46-176.jpg?x-oss-process=style/product_image_thumbnail",
+                "thumbnailW": 4608,
+                "thumbnailH": 3456,
+                "size": null,
+                "bidTimes": 39,
+                "priceStart": null,
+                "priceOnce": null,
+                "priceCurrent": "200.00",
+                "postFee": 0,
+                "deposit": 0,
+                "keepPrice": 0,
+                "productCategoryName": "金属钱币金银器",
+                "categoryFirst": "金属钱币",
+                "categorySecond": "金银器",
+                "categoryFirstId": 4,
+                "categorySecondId": 28,
+                "createTime": 1631846402000,
+                "updateTime": 1631873540000,
+                "commend": 0,
+                "attention": 0,
+                "conserve": 0,
+                "ageId": 380,
+                "age": "清",
+                "material": "茶具",
+                "materialId": 385,
+                "service": "80001,80002",
+                "startTime": 1631846400000,
+                "startTimeSecond": 1631846400,
+                "endTime": 1631959200000,
+                "endTimeSecond": 1631959200,
+                "status": 1,
+                "publishStatus": 1,
+                "soldoutReason": null,
+                "belongFrom": 99,
+                "belongAge": 5,
+                "isHelpSell": 0,
+                "tags": [
+                    "包邮",
+                    "优店"
+                ],
+                "description": "秘籍爱得利YY破耳机赢定提供第几周老婆婆警惕魔女狗肉我热破零OK了牛股VPN好咯咯联系宅急送泼猴一枚\n哦破坏性一种你有空你和他LOL热乎新视觉各位家长送猪婆猪红手印\n哦搜了SOHO国共合作咯雷敏破罐子和惠民久久热回力低价格亏叫起来的近距离这回呢\nPOS咯会哦胡婆婆诡秘之主色素攻速羽绒服新英体育新股狗肉",
+                "canDown": false,
+                "type": 1,
+                "retailPrice": null,
+                "oid": null,
+                "spec": null,
+                "mine": false
+            },
+            {
+                "pid": "YQ-LS-HDJ2NGLB",
+                "name": "白瓷茶杯盏",
+                "title": "白瓷茶杯盏",
+                "thumbnail": "https://yaqu-product-image.oss-cn-beijing.aliyuncs.com/0_2021-06-30-20%3A06%3A02%3A542_commodity.png",
+                "thumbnailW": 1554,
+                "thumbnailH": 2208,
+                "size": null,
+                "bidTimes": 0,
+                "priceStart": null,
+                "priceOnce": null,
+                "priceCurrent": "6666.00",
+                "postFee": 1,
+                "deposit": null,
+                "keepPrice": null,
+                "productCategoryName": "陶瓷紫砂瓷器",
+                "categoryFirst": "陶瓷紫砂",
+                "categorySecond": "瓷器",
+                "categoryFirstId": 1,
+                "categorySecondId": 10,
+                "createTime": 1625054776000,
+                "updateTime": 1629094237000,
+                "commend": 0,
+                "attention": 0,
+                "conserve": 0,
+                "ageId": 26,
+                "age": "高古",
+                "material": "杯盏罐",
+                "materialId": 33,
+                "service": null,
+                "startTime": 1625054760000,
+                "startTimeSecond": 1625054776,
+                "endTime": null,
+                "endTimeSecond": null,
+                "status": 1,
+                "publishStatus": 1,
+                "soldoutReason": null,
+                "belongFrom": 99,
+                "belongAge": 3,
+                "isHelpSell": 0,
+                "tags": [
+                    "当代",
+                    "优店"
+                ],
+                "description": "",
+                "canDown": false,
+                "type": 2,
+                "retailPrice": "6666.00",
+                "oid": null,
+                "spec": null,
+                "mine": false
+            },
+            {
+                "pid": "YQ-LS-BE59KL9B",
+                "name": "墨玉荷花瓣大笔洗",
+                "title": "墨玉荷花瓣大笔洗",
+                "thumbnail": "https://yaqu-product-image.oss-cn-beijing.aliyuncs.com/0_2021-06-30-22%3A16%3A36%3A680_commodity.png",
+                "thumbnailW": 2016,
+                "thumbnailH": 2688,
+                "size": null,
+                "bidTimes": 0,
+                "priceStart": null,
+                "priceOnce": null,
+                "priceCurrent": "25000.00",
+                "postFee": 0,
+                "deposit": null,
+                "keepPrice": null,
+                "productCategoryName": "玉石珠宝玉石",
+                "categoryFirst": "玉石珠宝",
+                "categorySecond": "玉石",
+                "categoryFirstId": 2,
+                "categorySecondId": 14,
+                "createTime": 1625062602000,
+                "updateTime": 1629094237000,
+                "commend": 0,
+                "attention": 0,
+                "conserve": 1,
+                "ageId": 103,
+                "age": "高古",
+                "material": "把件摆件",
+                "materialId": 114,
+                "service": "80001,80002",
+                "startTime": 1625062560000,
+                "startTimeSecond": 1625062602,
+                "endTime": null,
+                "endTimeSecond": null,
+                "status": 1,
+                "publishStatus": 1,
+                "soldoutReason": null,
+                "belongFrom": 99,
+                "belongAge": 3,
+                "isHelpSell": 0,
+                "tags": [
+                    "包邮",
+                    "包退"
+                ],
+                "description": "原配底座，品相完整，有意可小刀",
+                "canDown": false,
+                "type": 2,
+                "retailPrice": "25000.00",
+                "oid": null,
+                "spec": null,
+                "mine": false
+            }]
+        }
+        }
+    })
+    
+  </script>
+  <style>
+
+      .el-input__inner{
+          height: 30px;
+          border-radius: 20px;  
+          position: absolute;
+          z-index: 1;
+
+      }
+      #app{
+          width: auto;
+          position:  relative;
+      }
+     #back{
+         height: 150px;
+         width: 100%;
+         position: absolute;
+         background-color: rgb(240, 11, 11);
+         border-bottom-left-radius: 25%;
+         border-bottom-right-radius: 25%;
+     }
+     body{
+         margin: 0;
+     }
+     #input{
+         padding: 15px;
+     }
+    .el-carousel__item h3 {
+        color: #475669;
+        font-size: 18px;
+        opacity: 0.75;
+        margin: 0;
+    }
+    
+    .el-carousel__item:nth-child(2n) {
+        background-color:#d3dce6;
+    }
+    
+    .el-carousel__item:nth-child(2n+1) {
+        background-color: #d3dce6;
+    }
+    .el-carousel{
+        margin-top: 50px;
+        margin-bottom: 20px;
+        height: 140px;
+    }
+    .el-carousel__container{
+        height: 140px;
+    }
+    /* .el-carousel__indicators{
+        margin-top: -30px;
+        z-index: 9999999 !important;
+    } */
+    #icon{
+        height: 50px;
+        display: flex;
+        justify-content: center;
+    }
+    #icon > div:nth-child(1){
+        margin-right: 30px;
+    }
+    #icon > div:nth-child(2){
+        margin-right: 30px;
+    }
+    #icon > div:nth-child(3){
+        margin-right: 30px;
+    }
+    #icon > div{
+        text-align: center;
+    }
+  </style>
+</html>

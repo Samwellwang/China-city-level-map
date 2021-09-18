@@ -26,14 +26,14 @@
         ]}));	  
 	map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
 	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-	this.zoom = map.getZoom();
+	// this.zoom = map.getZoom();
     this.map = map;
     this.getBoundary();
     /*
     =====获取行政区域边界=====
     */
     function getBoundary() {
-       this.addDistrict("七台河");
+       this.addDistrict("张家口");
     };
     /*
     =====添加行政区域=====
@@ -48,6 +48,8 @@
           for (var i = 0; i < count; i++) {
             blist.push({ points: rs.boundaries[i], name: districtName });
           };
+          console.log(blist);
+          console.log(districtLoading);
           //加载完成区域点后计数器-1
           districtLoading--;
           if (districtLoading == 0) {
